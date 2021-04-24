@@ -55,7 +55,7 @@ if __name__ == '__main__':
         print('最佳存档为', state_dict_file_best)
         agent.Q_local.load_state_dict(torch.load(state_dict_file_best))
         agent.Q_target.load_state_dict(torch.load(state_dict_file_best))
-        # EPS_INIT=0.05
+        EPS_INIT=0.05
     rewards_log = train(env, agent, RAM_NUM_EPISODE, EPS_INIT, EPS_DECAY, EPS_MIN, MAX_T)#训练
 
     # agent.Q_local.to('cpu')
